@@ -3,34 +3,34 @@ import OUTCOME.*
 fun main() {
 
     val mySigns = mapOf(
-        "X" to 1,
-        "Y" to 2,
-        "Z" to 3,
+        "R" to 1,
+        "P" to 2,
+        "S" to 3,
     )
 
     fun getResult(opponentSign: String, mySign: String): Int =
         when (opponentSign) {
             "A" -> {
                 when (mySign) {
-                    "X" -> mySigns[mySign]!! + DRAW.value
-                    "Y" -> mySigns[mySign]!! + WIN.value
-                    "Z" -> mySigns[mySign]!! + LOSS.value
+                    "X" -> mySigns["S"]!! + LOSS.value
+                    "Y" -> mySigns["R"]!! + DRAW.value
+                    "Z" -> mySigns["P"]!! + WIN.value
                     else -> error("Nope")
                 }
             }
             "B" -> {
                 when (mySign) {
-                    "X" -> mySigns[mySign]!! + LOSS.value
-                    "Y" -> mySigns[mySign]!! + DRAW.value
-                    "Z" -> mySigns[mySign]!! + WIN.value
+                    "X" -> mySigns["R"]!! + LOSS.value
+                    "Y" -> mySigns["P"]!! + DRAW.value
+                    "Z" -> mySigns["S"]!! + WIN.value
                     else -> error("Nope")
                 }
             }
             "C" -> {
                 when (mySign) {
-                    "X" -> mySigns[mySign]!! + WIN.value
-                    "Y" -> mySigns[mySign]!! + LOSS.value
-                    "Z" -> mySigns[mySign]!! + DRAW.value
+                    "X" -> mySigns["P"]!! + LOSS.value
+                    "Y" -> mySigns["S"]!! + DRAW.value
+                    "Z" -> mySigns["R"]!! + WIN.value
                     else -> error("Nope")
                 }
             }
